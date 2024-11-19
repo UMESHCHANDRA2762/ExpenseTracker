@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+/* Expense Item Styling */
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.expense-date {
+  font-size: 1rem;
+  color: #888;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.expense-details {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-end;
+}
+
+.expense-details h2 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #333;
+}
+
+.expense-amount {
+  font-size: 1.2rem;
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.expense-actions button {
+  margin-left: 10px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.expense-actions button:hover {
+  background-color: #f1f1f1;
+}
+
+.expense-actions button:first-child {
+  background-color: #4CAF50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.expense-actions button:last-child {
+  background-color: #d9534f;
+  color: white;
 }

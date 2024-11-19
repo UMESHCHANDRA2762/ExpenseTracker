@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import ExpenseForm from './components/ExpenseForm';
+import ExpenseList from './components/ExpenseList';
 
-function App() {
+const App = () => {
+  const [expenses, setExpenses] = useState([]);
+  const [editingExpense, setEditingExpense] = useState(null); // Track the expense being edited
+
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => [expense, ...prevExpenses]);
+  };
+
+  const deleteExpenseHandler = (id) => {
+    setExpenses((prevExpenses) => prevExpenses.filter((expense) => expense.id !== id));
+  };
+
+  const editExpenseHandler = (expense) => {
+    setEditingExpense(expense);
+  };
+
+  const saveEditedExpenseHandler = (updatedExpense) => {
+    setExpenses((prevExpenses) =>
+      prevExpenses.map((expense) =>
+        expense.id === updatedExpense.id ? updatedExpense : expense
+      )
+    );
+    setEditingExpense(null); // Reset the editing state
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Expense Tracker</h1>
+      <ExpenseForm
+        onAddExpense={addExpenseHandler}
+        editingExpense={editingExpense}
+        onSaveEditedExpense={saveEditedExpenseHandler}
+      />
+      <ExpenseList
+        expenses={expenses}
+        onDeleteExpense={deleteExpenseHandler}
+        onEditExpense={editExpenseHandler}
+      />
     </div>
   );
-}
+};
 
 export default App;

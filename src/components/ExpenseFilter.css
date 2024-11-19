@@ -1,0 +1,25 @@
+/* Expense Filter Styling */
+.expense-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .expense-filter label {
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .expense-filter select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 120px;
+  }
+  
