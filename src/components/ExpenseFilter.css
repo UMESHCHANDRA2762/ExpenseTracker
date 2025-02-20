@@ -1,25 +1,57 @@
-/* Expense Filter Styling */
+/* Enhanced Expense Filter Styling */
 .expense-filter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  background-color: #f9f9f9;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  gap: 1rem; /* For better spacing in smaller screens */
+}
+
+.expense-filter .filter-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 200px; /* Ensures proper spacing even on small screens */
+}
+
+.expense-filter label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.expense-filter select {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expense-filter select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.expense-filter select:hover {
+  border-color: #555;
+}
+
+@media (max-width: 768px) {
+  .expense-filter {
+    flex-direction: column;
+    align-items: stretch;
   }
-  
-  .expense-filter label {
-    font-size: 1rem;
-    color: #444;
+
+  .expense-filter .filter-control {
+    width: 100%;
   }
-  
-  .expense-filter select {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    width: 120px;
-  }
-  
+}

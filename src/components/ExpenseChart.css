@@ -1,0 +1,63 @@
+/* Enhanced Expense Chart Styling */
+.expense-chart {
+    margin: 2rem auto;
+    max-width: 900px;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .expense-chart h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-transform: capitalize;
+  }
+  
+  .chart-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .chart {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .chart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chart h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  canvas {
+    max-height: 350px;
+  }
+  
+  @media (max-width: 768px) {
+    .chart-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .chart {
+      max-width: 90%;
+    }
+  }
+  

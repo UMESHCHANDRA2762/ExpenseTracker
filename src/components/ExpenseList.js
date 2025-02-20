@@ -13,10 +13,14 @@ const ExpenseList = ({ expenses, onDeleteExpense, onEditExpense }) => {
           <div className="expense-date">{expense.date}</div>
           <div className="expense-details">
             <h2>{expense.title}</h2>
-            <div className="expense-amount">${expense.amount}</div>
+            <div className="expense-amount">${parseFloat(expense.amount).toFixed(2)}</div>
+            {/* Display category for each expense */}
+            <div className="expense-category">Category: {expense.category}</div>
           </div>
           <div className="expense-actions">
+            {/* Edit button triggers onEditExpense function */}
             <button onClick={() => onEditExpense(expense)}>Edit</button>
+            {/* Delete button triggers onDeleteExpense function */}
             <button onClick={() => onDeleteExpense(expense.id)}>Delete</button>
           </div>
         </li>
